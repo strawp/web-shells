@@ -50,4 +50,5 @@ A useful payload to check for privilege escalation vulnerabilities on the target
 ## php-reverse_shell.txt
 
 A very reliable reverse shell initiator. You can write reverse shells in much fewer lines of text but they won't work as well as this.
+Also from http://pentestmonkey.net/tools/web-shells/php-reverse-shell
 
