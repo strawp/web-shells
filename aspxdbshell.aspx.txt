@@ -30,7 +30,7 @@ if ((Request.QueryString["sql"] != null) && (Request.QueryString["conn"] != null
       // Rows
       while( reader.Read() )
 			{
-				for( int i=0; i<reader.length; i++ ){
+				for( int i=0; i<reader.FieldCount; i++ ){
 					Response.Write( String.Format("{0}\t", reader[i] ) );
 				}
 				Response.Write("\n");
