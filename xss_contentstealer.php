@@ -16,7 +16,7 @@
       echo "for( var i=0; i<col.length; i++ ){ content += col[i].outerHTML + '\\n'; }\n";
     }
 ?>
-var url = "<?php echo $url; ?>?c=" + btoa(content);
+var url = "<?php echo $url; ?>?c=" + encodeURIComponent(btoa(content));
 f = document.createElement('iframe');
 f.src = url;
 document.getElementsByTagName('body')[0].appendChild(f);
