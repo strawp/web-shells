@@ -3,6 +3,10 @@ web-shells
 
 This is just a very set of very simple web shells. Most I've written, some are by other authors (named in the source).
 
+I don't recommend using these in a live environment unless you know what you're doing. Most of these have no authentication or restrictions in them and were designed to do simple jobs in the minimum time, primarily for virtual lab and exam usage.
+
+For a much more thoroughly thought through set of web shells for a wider range of platforms, I recommend Laudanum: http://laudanum.inguardians.com/
+
 ## cmdshell.txt
 
 Very simple PHP command shell. Executes whatever is in $_GET["cmd"] and outputs results to the page. You can probably do 90% of work just using this.
@@ -52,3 +56,10 @@ A useful payload to check for privilege escalation vulnerabilities on the target
 A very reliable reverse shell initiator. You can write reverse shells in much fewer lines of text but they won't work as well as this.
 Also from http://pentestmonkey.net/tools/web-shells/php-reverse-shell
 
+## xss_cookiestealer.php
+
+For XSS attacks. This posts the value of a victim's cookies back to itself in base64 and decodes the output so you can spot the plaintext in HTTP traffic
+
+## xss_contentstealer.php
+
+Like xss_cookiestealer.php except it steals a specified piece of content from the injected page rather than a cookie
