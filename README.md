@@ -1,7 +1,7 @@
 web-shells
 ==========
 
-This is just a very set of very simple web shells. Most I've written, some are by other authors (named in the source).
+This is a set of very simple web shells. Most I've written, some are by other authors (named in the source).
 
 I don't recommend using these in a live environment unless you know what you're doing. Most of these have no authentication or restrictions in them and were designed to do simple jobs in the minimum time, primarily for virtual lab and exam usage.
 
