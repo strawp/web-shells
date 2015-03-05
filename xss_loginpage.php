@@ -26,7 +26,7 @@ $html = "
     top: 0;
     left: 0;
     background: black;
-    opacity: 50%;
+    opacity: 0.9;
 }
 #login_modal_container {
     position: absolute;
@@ -38,15 +38,19 @@ $html = "
     border: 1px solid black;
     border-radius: 5px;
 }
+#login_modal_container label {
+    width: 20%;
+}
 </style>
 <div id='login_modal_fade'></div>
 <div id='login_modal_container'>
 <form method='get' action='$self'>
     <h2>Log in</h2>
     <div class='field'><label>Username: </label><input type='text' name='username'></div>
-    <div class='field'><label>Password: </label><input type='text' name='password'></div>
-    <div class='buttons'><button>Log in</button></div>
+    <div class='field'><label>Password: </label><input type='password' name='password'></div>
+    <div class='buttons'><input type='submit' value='Log in'></div>
 </form>
 </div>";
+$html = preg_replace( "/[\n\r]/", "", $html ); 
 echo "document.body.innerHTML += \"$html\";";
 ?>
